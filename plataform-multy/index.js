@@ -135,13 +135,16 @@ if (keys.arrowLeft.pressed) {
 if(player1.position.y + player1.height <=       //collision detection on the y-axis
     platform.position.y  && 
     player1.position.y + player1.height+ player1.velocity.y >=
-    platform.position.y         && player1.position.x    + player1.width >= platform.position.x ){   //x-axis
+    platform.position.y         && player1.position.x    + player1.width >= platform.position.x
+    && player1.position.x <= platform.position.x +platform.width
+    ){   //x-axis
 player1.velocity.y = 0
 }
 if(player2.position.y + player2.height <=      
     platform.position.y  && 
     player2.position.y + player2.height+ player2.velocity.y >=
-    platform.position.y         && player2.position.x   + player2.width >= platform.position.x)      {
+    platform.position.y         && player2.position.x   + player2.width >= platform.position.x
+    && player2.position.x <= platform.position.x +platform.width)      {
 player2.velocity.y = 0
 }
 
