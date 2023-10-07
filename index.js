@@ -13,10 +13,6 @@ canvas.height= window.innerHeight       //same with the height
 
 
 
-
-
-
-
 const gravity= .7
 
 class Player{      //this is a class of Player. in here we add the properties that defines the player
@@ -117,66 +113,9 @@ player1.update()
 player2.update()
 platform.draw()
 
-// For player1
-if (keys.d.pressed && player1.position.x <400) {        //where the problem lies
-    player1.velocity.x = 5;
-} else if (keys.a.pressed && player1.position.x > 100) {
-    player1.velocity.x = -5;
-} else {
-    player1.velocity.x = 0;
-
-if(keys.d.pressed){
-platform.position.x -= 5
-}else if (keys.a.pressed){
-    platform.position.x += 5
-}
-
-}
-
-// For player2
-if (keys.arrowRight.pressed && player2.position.x <400) {       
-    player2.velocity.x = 5;
-} else if (keys.arrowLeft.pressed && player2.position.x > 100) {
-    player2.velocity.x = -5;
-} else {
-    player2.velocity.x = 0;
-
-    if(keys.arrowRight.pressed){
-        platform.position.x -= 5
-        }else if (keys.arrowLeft.pressed){
-            platform.position.x += 5
-}
-}
-
-
-//collision with the plataform
-
-if(player1.position.y + player1.height <=       //collision detection on the y-axis
-    platform.position.y  && 
-    player1.position.y + player1.height+ player1.velocity.y >=
-    platform.position.y         && player1.position.x    + player1.width >= platform.position.x
-    && player1.position.x <= platform.position.x +platform.width
-    ){   //x-axis
-player1.velocity.y = 0
-}
-if(player2.position.y + player2.height <=      
-    platform.position.y  && 
-    player2.position.y + player2.height+ player2.velocity.y >=
-    platform.position.y         && player2.position.x   + player2.width >= platform.position.x
-    && player2.position.x <= platform.position.x +platform.width)      {
-player2.velocity.y = 0
-}
-
-
 
 }
 animate()
-
-
-
-
-
-
 
 
 
