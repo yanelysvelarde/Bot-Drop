@@ -60,8 +60,8 @@ constructor(){
         x:200,
         y:100
     }
-    this.width = 200
-    this.height = 20
+    this.width = 300
+    this.height = 10
 }
 draw() {        //context: fillRect creates the rectangle
     c.fillStyle = 'black'
@@ -70,7 +70,7 @@ draw() {        //context: fillRect creates the rectangle
 }
 
 
-
+//=============================================================
 
 
 
@@ -95,11 +95,12 @@ arrowRight: {
 
 }
 
-
-
+//=============================================================
+//ANIMATE Function
 
 function animate(){
-requestAnimationFrame(animate)   //requestAnimationFrame acts like loop...kinda, so it's calling animate an infinity number of times 
+requestAnimationFrame(animate)   //requestAnimationFrame acts like loop...
+//kinda, so it's calling animate an infinity number of times 
 
 c.clearRect(0,0,canvas.width,canvas.height)           //clears canvas 
 
@@ -107,9 +108,11 @@ player1.update()
 player2.update()
 platform.draw()
 
-
+//=======================================================
   
    
+
+//The following code is used for the controls of the players.
 
 // For player1 j
 if (keys.d.pressed) {        //where the problem lies
@@ -142,6 +145,7 @@ if (keys.arrowRight.pressed) {
 }
 }
 
+//==================================
 
 
 
@@ -153,17 +157,30 @@ if (keys.arrowRight.pressed) {
 
 
 
+// The following code is going to be for collisions. The collisions is going to deal with
+//how the players are going to interact with the platforms.
 
-//collision with the plataform
+//The execution of the code below the if statements will change the velocity of the players to 0
+//So they don't appear falling down THROUGH the platforms.
 
+
+
+//Player 1's Collision 
 if(player1.position.y + player1.height <=       //collision detection on the y-axis
     platform.position.y  && 
     player1.position.y + player1.height+ player1.velocity.y >=
     platform.position.y         && player1.position.x    + player1.width >= platform.position.x
     && player1.position.x <= platform.position.x +platform.width
     ){   //x-axis
-player1.velocity.y = 0
-}
+player1.velocity.y = 0 //Stops the players from moving after standing on top of platform.
+    }
+//The else if statements are going to be used for the players phasing UP through the platforms.
+
+
+
+
+//Player 2's Collision
+
 if(player2.position.y + player2.height <=      
     platform.position.y  && 
     player2.position.y + player2.height+ player2.velocity.y >=
@@ -175,6 +192,8 @@ player2.velocity.y = 0
 animate()
 
 
+
+//=============================================================
 
 
 
@@ -235,6 +254,8 @@ case 37:
 })
 
 
+
+//=============================================================
 
 
 addEventListener('keyup',({ keyCode }) => {  
