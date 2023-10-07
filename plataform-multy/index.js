@@ -51,9 +51,30 @@ else this.velocity.y = 0
 
 }
 
+class Platform{
+constructor(){
+    this.position= {
+        x:200,
+        y:100
+    }
+    this.width = 200
+    this.height = 20
+}
+draw() {        //context: fillRect creates the rectangle
+    c.fillStyle = 'yellow'
+    c.fillRect(this.position.x, this.position.y, this.width, this.height)
+}
+}
+
+
+
+
+
+
+
 const player1 = new Player()       //in here i want to implement the Player class
 const player2 = new Player({ x:150,y: 100},'blue') //you can change the position on the x-axis for it to be closer to player1 or not
-
+const platform = new Platform()
 
 const keys = {
 a: {
@@ -88,6 +109,7 @@ c.clearRect(0,0,canvas.width,canvas.height)           //clears canvas
 
 player1.update()
 player2.update()
+platform.draw()
 
 // For player1
 if (keys.a.pressed) {
@@ -105,6 +127,22 @@ if (keys.arrowLeft.pressed) {
     player2.velocity.x = 5;
 } else {
     player2.velocity.x = 0;
+}
+
+
+//collision with the plataform
+
+if(player1.position.y + player1.height <=       //collision detection on the y-axis
+    platform.position.y  && 
+    player1.position.y + player1.height+ player1.velocity.y >=
+    platform.position.y){
+player1.velocity.y = 0
+}
+if(player2.position.y + player2.height <=      
+    platform.position.y  && 
+    player2.position.y + player2.height+ player2.velocity.y >=
+    platform.position.y){
+player2.velocity.y = 0
 }
 
 
