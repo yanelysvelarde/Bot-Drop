@@ -10,11 +10,8 @@ canvas.height= window.innerHeight       //same with the height
 const gravity= .5
 
 class Player{      //this is a class of Player. in here we add the properties that defines the player
-constructor(){      //the constructor method sets the properties
-    this.position= {
-        x: 100,
-        y:100
-    }
+constructor(position={x:100,y:100},color ='green'){      //the constructor method sets the properties
+    this.position= position;
 
     this.velocity= {
         x: 0,
@@ -26,9 +23,12 @@ constructor(){      //the constructor method sets the properties
     this.height= 30
     
 
+    this.color= color
+
 }
 draw(){             //in here I'm making like a square that will represent later the player
-c.fillRect(this.position.x,this.position.y, this.width, this.height)
+c.fillStyle=this.color
+    c.fillRect(this.position.x,this.position.y, this.width, this.height)
 }
 
 update(){   //altering the player/s properties
@@ -44,12 +44,14 @@ else this.velocity.y = 0
 
 }
 
-const player = new Player()       //in here i want to implement the Player class
+const player1 = new Player()       //in here i want to implement the Player class
+const player2 = new Player({ x:150,y: 100},'blue')
 
 
 function animate(){
 requestAnimationFrame(animate)   //requestAnimationFrame acts like loop...kinda, so it's calling animate an infinity number of times 
 c.clearRect(0,0,canvas.width,canvas.height)           //clears canvas 
-player.update()
+player1.update()
+player2.update()
 }
 animate()
