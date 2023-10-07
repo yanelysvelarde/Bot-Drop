@@ -75,7 +75,7 @@ draw() {        //context: fillRect creates the rectangle
 
 
 const player1 = new Player()       //in here i want to implement the Player class
-const player2 = new Player({ x:150,y: 100},'red') //you can change the position on the x-axis for it to be closer to player1 or not
+const player2 = new Player({ x:150,y: 100},'blue') //you can change the position on the x-axis for it to be closer to player1 or not
 const platform = new Platform()
 
 const keys = {
