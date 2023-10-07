@@ -66,7 +66,7 @@ constructor(){
     this.height = 20
 }
 draw() {        //context: fillRect creates the rectangle
-    c.fillStyle = 'black'
+    c.fillStyle = 'purple'
     c.fillRect(this.position.x, this.position.y, this.width, this.height)
 }
 }
