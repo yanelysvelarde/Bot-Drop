@@ -99,6 +99,7 @@ if (keys.d.pressed) {        //where the problem lies
     player1.velocity.x = -5;
 } else {
     player1.velocity.x = 0;
+    
 
 if(keys.d.pressed){
 platform.position.x -= 5
@@ -115,6 +116,7 @@ if (keys.arrowRight.pressed) {
     player2.velocity.x = -5;
 } else {
     player2.velocity.x = 0;
+    
 
     if(keys.arrowRight.pressed){
         platform.position.x -= 5
