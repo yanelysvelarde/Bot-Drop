@@ -4,10 +4,16 @@
 
 const canvas= document.querySelector('canvas')  
 const c = canvas.getContext('2d')
+
+
 console.log(c)
 
 canvas.width= window.innerWidth         //sooo innerWidht is for it to be the whole widht of the canvas, we could have done this with css but lets not complicate things :'')
 canvas.height= window.innerHeight       //same with the height 
+
+
+
+
 
 
 
@@ -112,7 +118,7 @@ player2.update()
 platform.draw()
 
 // For player1
-if (keys.d.pressed && player1.position.x <400) {
+if (keys.d.pressed && player1.position.x <400) {        //where the problem lies
     player1.velocity.x = 5;
 } else if (keys.a.pressed && player1.position.x > 100) {
     player1.velocity.x = -5;
@@ -128,7 +134,7 @@ platform.position.x -= 5
 }
 
 // For player2
-if (keys.arrowRight.pressed && player2.position.x <400) {
+if (keys.arrowRight.pressed && player2.position.x <400) {       
     player2.velocity.x = 5;
 } else if (keys.arrowLeft.pressed && player2.position.x > 100) {
     player2.velocity.x = -5;
