@@ -16,7 +16,7 @@ const gravity= .5
 class Player{      //this is a class of Player. in here we add the properties that defines the player
 constructor(position={x:100,y:100},color ='purple'){      //the constructor method sets the properties
     this.position= position;
-
+    this.lastKey = null;
 
     this.velocity= {
         x: 0,
@@ -55,6 +55,22 @@ const player1 = new Player()       //in here i want to implement the Player clas
 const player2 = new Player({ x:150,y: 100},'blue') //you can change the position on the x-axis for it to be closer to player1 or not
 
 
+const keys = {
+a: {
+    pressed: false 
+}, 
+d: {
+    pressed: false 
+},
+arrowLeft: {
+    pressed: false 
+}, 
+arrowRight: {
+    pressed: false 
+}
+
+}
+
 console.log(player1);
 console.log(player2);
 
@@ -73,8 +89,35 @@ c.clearRect(0,0,canvas.width,canvas.height)           //clears canvas
 player1.update()
 player2.update()
 
+// For player1
+if (keys.a.pressed) {
+    player1.velocity.x = -5;
+} else if (keys.d.pressed) {
+    player1.velocity.x = 5;
+} else {
+    player1.velocity.x = 0;
+}
+
+// For player2
+if (keys.arrowLeft.pressed) {
+    player2.velocity.x = -5;
+} else if (keys.arrowRight.pressed) {
+    player2.velocity.x = 5;
+} else {
+    player2.velocity.x = 0;
+}
+
+
+
 }
 animate()
+
+
+
+
+
+
+
 
 
 
@@ -85,11 +128,14 @@ switch (keyCode){
     //player1
     case 65:
         console.log('left')  //just in case, console.log() is to print
+        keys.a.pressed = true
+        player1.lastKey=keyCode
         break
 
         case 68:
             console.log('right')
-            player1.velocity.x +=1
+           keys.d.pressed = true
+           player1.lastKey=keyCode
             break
 
 
@@ -106,11 +152,14 @@ switch (keyCode){
 //player2
 
 case 37:
-console.log('left')  
-break
+            console.log('left')  
+        keys.arrowLeft.pressed = true
+        player2.lastKey=keyCode
+            break
         case 39:
             console.log('right')
-            player2.velocity.x +=1
+            keys.arrowRight.pressed = true
+            player2.lastKey=keyCode
             break
 
 
@@ -126,6 +175,7 @@ break
 
 
 }
+
 })
 
 
@@ -137,11 +187,12 @@ addEventListener('keyup',({ keyCode }) => {
         //player1
         case 65:
             console.log('left')  
+            keys.a.pressed = false
             break
     
             case 68:
                 console.log('right')
-                player1.velocity.x =0
+                keys.d.pressed = false
                 break
     
     
@@ -159,10 +210,11 @@ addEventListener('keyup',({ keyCode }) => {
     
     case 37:
     console.log('left')  
+    keys.arrowLeft.pressed = false
     break
             case 39:
                 console.log('right')
-                player2.velocity.x =0
+                keys.arrowRight.pressed = false
                 break
     
     
@@ -178,4 +230,5 @@ addEventListener('keyup',({ keyCode }) => {
     
     
     }
+ 
     })
