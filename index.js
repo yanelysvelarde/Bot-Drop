@@ -16,7 +16,7 @@ canvas.height= window.innerHeight       //same with the height
 const gravity= .7
 
 class Player{      //this is a class of Player. in here we add the properties that defines the player
-constructor(position={x:200,y:100},color ='purple'){      //the constructor method sets the properties
+constructor(position={x:400,y:100},color ='purple'){      //the constructor method sets the properties
     this.position= position;
     this.lastKey = null;
 
@@ -75,7 +75,7 @@ draw() {        //context: fillRect creates the rectangle
 
 
 const player1 = new Player()       //in here i want to implement the Player class
-const player2 = new Player({ x:250,y: 100},'blue') //you can change the position on the x-axis for it to be closer to player1 or not
+const player2 = new Player({ x:450,y: 100},'blue') //you can change the position on the x-axis for it to be closer to player1 or not
 const platform = new Platform()
 
 const keys = {
