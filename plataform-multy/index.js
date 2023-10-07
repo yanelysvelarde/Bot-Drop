@@ -23,7 +23,7 @@ constructor(position={x:100,y:100},color ='purple'){      //the constructor meth
     this.height= 30
     
 
-    this.color= color
+    this.color= color       //im adding different colors so you guys can know what square are you controlling
 
 }
 draw(){             //in here I'm making like a square that will represent later the player
@@ -48,10 +48,95 @@ const player1 = new Player()       //in here i want to implement the Player clas
 const player2 = new Player({ x:150,y: 100},'blue') //you can change the position on the x-axis for it to be closer to player1 or not
 
 
+console.log(player1);
+
+const keys = {
+    //keys to control the game
+    a: {
+        pressed : false
+    },
+    d: {
+        pressed : false
+    },
+    ArrowRight: {
+        pressed : false
+    },
+    ArrowLeft: {
+        pressed : false
+    }
+    
+}
+
+
+
+
+
+
 function animate(){
 requestAnimationFrame(animate)   //requestAnimationFrame acts like loop...kinda, so it's calling animate an infinity number of times 
+
 c.clearRect(0,0,canvas.width,canvas.height)           //clears canvas 
+
 player1.update()
 player2.update()
+player1.velocity.x = 0
+player2.velocity.x = 0
+
+
+
+//player1 movement
+if (keys.a.pressed && player1.lastKey === 'a'){
+    player1.velocity.x= -5
+} else if (keys.d.pressed && player1.lastKey === 'd'){
+    player1.velocity.x = 5
+}
+
+//player2 movement
+if (keys.a.pressed && player2.lastKey === 'a'){
+    player2.velocity.x= -5
+} else if (keys.d.pressed && player2.lastKey === 'd'){
+    player2.velocity.x = 5
+}
+
+
 }
 animate()
+
+
+
+
+
+
+window.addEventListener('keydown', (event) => {
+    
+    switch(event.key){
+        
+        case 'd':
+            keys.d.pressed = true
+            player1.lastKey = 'd'
+            break
+            case 'a':
+            keys.a.pressed = true
+            player1.lastKey = 'a'
+            break
+            case 'w':
+            player1.velocity.y = -20
+            break
+
+
+
+            case 'ArrowRight':
+            keys.ArrowRight.pressed = true
+            player2.lastKey= 'ArrowRight'
+            break
+            case 'ArrowLeft':
+            keys.ArrowLeft.pressed = true
+            player2.lastKey= 'ArrowLeft'
+            break
+            case 'ArrowUp':
+            player2.velocity.y = -20
+            break
+            
+
+    }
+})
