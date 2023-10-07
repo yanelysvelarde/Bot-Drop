@@ -11,8 +11,15 @@ constructor(){      //the constructor method sets the properties
         x: 100,
         y:100
     }
-    this.width= 100
-    this.height= 100
+
+    this.velocity= {
+        x: 0,
+        y:1                 //the best explanation i can give about the 1 (it's 4am in the morning) : the 1 in the y pushes the player down. Why? idk, physics i guess
+    }
+
+
+    this.width= 30          //size of the player
+    this.height= 30
     
 
 }
