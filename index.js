@@ -10,7 +10,7 @@ console.log(c)
 
 
 canvas.width = 512
-canvas.height = 576
+canvas.height = 2000
 
 
 
