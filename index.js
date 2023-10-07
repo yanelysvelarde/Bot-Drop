@@ -176,3 +176,118 @@ animate()
 
 
 //=============================================================
+
+
+
+addEventListener('keydown',({ keyCode }) => {  //this is understandable somehow if you click in inspect element
+    console.log(keyCode)
+    switch (keyCode){
+        //player1
+        case 65:
+            console.log('left')  //just in case, console.log() is to print
+            keys.a.pressed = true
+            player1.lastKey=keyCode
+            break
+    
+            case 68:
+                console.log('right')
+               keys.d.pressed = true
+               player1.lastKey=keyCode
+                break
+    
+    
+            case 83:
+                console.log('down')
+                break
+    
+         case 87:
+         console.log('up')
+         player1.velocity.y -=12       //idk why im substracting instead of add but it works somehow
+            break
+    
+    
+    //player2
+    
+    case 37:
+                console.log('left')  
+            keys.arrowLeft.pressed = true
+            player2.lastKey=keyCode
+                break
+            case 39:
+                console.log('right')
+                keys.arrowRight.pressed = true
+                player2.lastKey=keyCode
+                break
+    
+    
+            case 40:
+                console.log('down')
+                break
+    
+         case 38:
+         console.log('up')
+         player2.velocity.y -=12
+            break
+    
+    
+    
+    }
+    
+    })
+    
+    
+    
+    //=============================================================
+    
+    
+    addEventListener('keyup',({ keyCode }) => {  
+        console.log(keyCode)
+        switch (keyCode){
+            //player1
+            case 65:
+                console.log('left')  
+                keys.a.pressed = false
+                break
+        
+                case 68:
+                    console.log('right')
+                    keys.d.pressed = false
+                    break
+        
+        
+                case 83:
+                    console.log('down')
+                    break
+        
+             case 87:
+             console.log('up')
+             player1.velocity.y -=12
+                break
+        
+        
+        //player2
+        
+        case 37:
+        console.log('left')  
+        keys.arrowLeft.pressed = false
+        break
+                case 39:
+                    console.log('right')
+                    keys.arrowRight.pressed = false
+                    break
+        
+        
+                case 40:
+                    console.log('down')
+                    break
+        
+             case 38:
+             console.log('up')
+             player2.velocity.y -=12
+                break
+        
+        
+        
+        }
+     
+        })
