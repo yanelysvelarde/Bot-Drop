@@ -13,6 +13,7 @@ canvas.height= window.innerHeight       //same with the height
 
 
 
+
 const gravity= .7
 
 class Player{      //this is a class of Player. in here we add the properties that defines the player
@@ -94,13 +95,6 @@ arrowRight: {
 
 }
 
-console.log(player1);
-console.log(player2);
-
-
-
-
-
 
 
 
@@ -114,10 +108,10 @@ player2.update()
 platform.draw()
 
 
+  
+   
 
-
-
-// For player1
+// For player1 j
 if (keys.d.pressed) {        //where the problem lies
     player1.velocity.x = 5;
 } else if (keys.a.pressed) {
