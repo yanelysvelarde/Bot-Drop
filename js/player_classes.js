@@ -1,7 +1,7 @@
 //This JS file will contain the class creation for the players.
 
 class Player{      //this is a class of Player. in here we add the properties that defines the player
-    constructor(position={x:400,y:100},color ='red'){      //the constructor method sets the properties
+    constructor(position={x:100,y:100},color ='red'){      //the constructor method sets the properties
         this.position= position;
         this.lastKey = null;
     

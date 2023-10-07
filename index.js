@@ -17,7 +17,7 @@ canvas.height = 2000
 //All constants to be used in the file.
 const gravity= .7
 const player1 = new Player()       //in here i want to implement the Player class
-const player2 = new Player({ x:450,y: 100},'blue') //you can change the position on the x-axis for it to be closer to player1 or not
+const player2 = new Player({ x:150,y: 100},'blue') //you can change the position on the x-axis for it to be closer to player1 or not
 const platform = new Platform()
 
 const keys = {
@@ -92,6 +92,8 @@ player2.velocity.y = 0
 }
 }
 animate()
+//===============================
+
 
 
 //The following code is used for the controls of the players.
@@ -150,8 +152,9 @@ if(player1.position.y + player1.height <=       //collision detection on the y-a
     ){   //x-axis
 player1.velocity.y = 0 //Stops the players from moving after standing on top of platform.
     }
-//The else if statements are going to be used for the players phasing UP through the platforms.
 
+
+//The else if statements are going to be used for the players phasing UP through the platforms.
 
 
 
