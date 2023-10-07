@@ -108,28 +108,19 @@ else if (keys.a.pressed) {
 else {
     player1.velocity.x = 0;
 
-if(keys.d.pressed){
-platform.position.x -= 5
-}
-else if (keys.a.pressed){
-    platform.position.x += 5
-}
 
 }
 
 // For player2
 if (keys.arrowRight.pressed) {       
     player2.velocity.x = 5;
-} else if (keys.arrowLeft.pressed) {
+} 
+else if (keys.arrowLeft.pressed) {
     player2.velocity.x = -5;
-} else {
+} 
+else {
     player2.velocity.x = 0;
 
-    if(keys.arrowRight.pressed){
-        platform.position.x -= 5
-        }else if (keys.arrowLeft.pressed){
-            platform.position.x += 5
-}
 }
 
 //==================================
