@@ -41,6 +41,7 @@ const player = new Player()       //in here i want to implement the Player class
 
 function animate(){
 requestAnimationFrame(animate)   //requestAnimationFrame acts like loop...kinda, so it's calling animate an infinity number of times 
+c.clearRect(0,0,canvas.width,canvas.height)           //clears canvas 
 player.update()
 }
 animate()
