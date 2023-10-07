@@ -109,9 +109,9 @@ platform.draw()
 
 
 
+   
 
-
-// For player1
+// For player1 j
 if (keys.d.pressed) {        //where the problem lies
     player1.velocity.x = 5;
 } else if (keys.a.pressed) {
