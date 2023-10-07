@@ -18,63 +18,6 @@ canvas.height = 2000
 
 const gravity= .7
 
-class Player{      //this is a class of Player. in here we add the properties that defines the player
-constructor(position={x:400,y:100},color ='red'){      //the constructor method sets the properties
-    this.position= position;
-    this.lastKey = null;
-
-    this.velocity= {
-        x: 0,
-        y:0
-    }
-
-
-    this.width= 30          //size of the player
-    this.height= 30
-    
-
-    this.color= color       //im adding different colors so you guys can know what square are you controlling
-
-}
-draw(){             //in here I'm making like a square that will represent later the player
-c.fillStyle=this.color
-    c.fillRect(this.position.x,this.position.y, this.width, this.height)
-}
-
-update(){   //altering the player/s properties
-this.draw()
-this.position.x += this.velocity.x
-this.position.y += this.velocity.y
-
-
-
-if(this.position.y + this.height + this.velocity.y <=canvas.height)     //this is a condition so that the player can stay on the canvas w/o falling
-this.velocity.y += gravity  //so like an acceleration over time
-else this.velocity.y = 0
-
-}
-
-}
-
-class Platform{
-constructor(){
-    this.position= {
-        x:200,
-        y:100
-    }
-    this.width = 300
-    this.height = 10
-}
-draw() {        //context: fillRect creates the rectangle
-    c.fillStyle = 'purple'
-    c.fillRect(this.position.x, this.position.y, this.width, this.height)
-}
-}
-
-
-//=============================================================
-
-
 
 
 const player1 = new Player()       //in here i want to implement the Player class
@@ -112,7 +55,40 @@ platform.draw()
 
 //=======================================================
   
-   
+   // The following code is going to be for collisions. The collisions is going to deal with
+//how the players are going to interact with the platforms.
+
+//The execution of the code below the if statements will change the velocity of the players to 0
+//So they don't appear falling down THROUGH the platforms.
+
+
+
+//Player 1's Collision 
+if(player1.position.y + player1.height <=       //collision detection on the y-axis
+platform.position.y  && 
+player1.position.y + player1.height+ player1.velocity.y >=
+platform.position.y         && player1.position.x    + player1.width >= platform.position.x
+&& player1.position.x <= platform.position.x +platform.width
+){   //x-axis
+player1.velocity.y = 0 //Stops the players from moving after standing on top of platform.
+}
+//The else if statements are going to be used for the players phasing UP through the platforms.
+
+
+
+
+//Player 2's Collision
+
+if(player2.position.y + player2.height <=      
+platform.position.y  && 
+player2.position.y + player2.height+ player2.velocity.y >=
+platform.position.y         && player2.position.x   + player2.width >= platform.position.x
+&& player2.position.x <= platform.position.x +platform.width)      {
+player2.velocity.y = 0
+}
+}
+animate()
+
 
 //The following code is used for the controls of the players.
 
@@ -153,12 +129,6 @@ if (keys.arrowRight.pressed) {
 
 
 
-
-
-
-
-
-
 // The following code is going to be for collisions. The collisions is going to deal with
 //how the players are going to interact with the platforms.
 
@@ -190,7 +160,7 @@ if(player2.position.y + player2.height <=
     && player2.position.x <= platform.position.x +platform.width)      {
 player2.velocity.y = 0
 }
-}
+
 animate()
 
 
