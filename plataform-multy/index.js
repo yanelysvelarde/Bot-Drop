@@ -11,7 +11,7 @@ canvas.height= window.innerHeight       //same with the height
 
 
 
-const gravity= .5
+const gravity= .7
 
 class Player{      //this is a class of Player. in here we add the properties that defines the player
 constructor(position={x:100,y:100},color ='purple'){      //the constructor method sets the properties
@@ -145,7 +145,7 @@ switch (keyCode){
 
      case 87:
      console.log('up')
-     player1.velocity.y -=20       //idk why im substracting instead of add but it works somehow
+     player1.velocity.y -=12       //idk why im substracting instead of add but it works somehow
         break
 
 
@@ -169,7 +169,7 @@ case 37:
 
      case 38:
      console.log('up')
-     player2.velocity.y -=20
+     player2.velocity.y -=12
         break
 
 
@@ -202,7 +202,7 @@ addEventListener('keyup',({ keyCode }) => {
     
          case 87:
          console.log('up')
-         player1.velocity.y -=20     
+         player1.velocity.y -=12
             break
     
     
@@ -224,7 +224,7 @@ addEventListener('keyup',({ keyCode }) => {
     
          case 38:
          console.log('up')
-         player2.velocity.y -=20
+         player2.velocity.y -=12
             break
     
     
