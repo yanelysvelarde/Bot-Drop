@@ -112,6 +112,7 @@ else if (keys.a.pressed) {
 } 
 else {
     player1.velocity.x = 0;
+    
 
 
 }
@@ -125,6 +126,7 @@ else if (keys.arrowLeft.pressed) {
 } 
 else {
     player2.velocity.x = 0;
+    
 
 }
 
