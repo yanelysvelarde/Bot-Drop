@@ -14,12 +14,8 @@ canvas.height = 2000
 
 
 
-
-
+//All constants to be used in the file.
 const gravity= .7
-
-
-
 const player1 = new Player()       //in here i want to implement the Player class
 const player2 = new Player({ x:450,y: 100},'blue') //you can change the position on the x-axis for it to be closer to player1 or not
 const platform = new Platform()
@@ -36,9 +32,13 @@ arrowLeft: {
 }, 
 arrowRight: {
     pressed: false 
+}   
 }
-//hi    
-}
+
+
+
+
+
 
 //=============================================================
 //ANIMATE Function
@@ -55,6 +55,11 @@ platform.draw()
 
 //=======================================================
   
+
+
+
+
+
    // The following code is going to be for collisions. The collisions is going to deal with
 //how the players are going to interact with the platforms.
 
@@ -73,7 +78,6 @@ platform.position.y         && player1.position.x    + player1.width >= platform
 player1.velocity.y = 0 //Stops the players from moving after standing on top of platform.
 }
 //The else if statements are going to be used for the players phasing UP through the platforms.
-
 
 
 
