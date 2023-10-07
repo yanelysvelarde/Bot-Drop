@@ -1,3 +1,7 @@
+//just in case, to see what's happenig just click on the index.html file directly from the file, not the compiler(not the thing you use to run code etc. visual studio code, jet brain, etc).
+//also, it's important that you guys can see wassap cause you may need to click on "inspect element" to make changes on the code
+
+
 const canvas= document.querySelector('canvas')  
 const c = canvas.getContext('2d')
 console.log(c)
@@ -12,6 +16,7 @@ const gravity= .5
 class Player{      //this is a class of Player. in here we add the properties that defines the player
 constructor(position={x:100,y:100},color ='purple'){      //the constructor method sets the properties
     this.position= position;
+
 
     this.velocity= {
         x: 0,
@@ -49,23 +54,9 @@ const player2 = new Player({ x:150,y: 100},'blue') //you can change the position
 
 
 console.log(player1);
+console.log(player2);
 
-const keys = {
-    //keys to control the game
-    a: {
-        pressed : false
-    },
-    d: {
-        pressed : false
-    },
-    ArrowRight: {
-        pressed : false
-    },
-    ArrowLeft: {
-        pressed : false
-    }
-    
-}
+
 
 
 
@@ -79,25 +70,6 @@ c.clearRect(0,0,canvas.width,canvas.height)           //clears canvas
 
 player1.update()
 player2.update()
-player1.velocity.x = 0
-player2.velocity.x = 0
-
-
-
-//player1 movement
-if (keys.a.pressed && player1.lastKey === 'a'){
-    player1.velocity.x= -5
-} else if (keys.d.pressed && player1.lastKey === 'd'){
-    player1.velocity.x = 5
-}
-
-//player2 movement
-if (keys.a.pressed && player2.lastKey === 'a'){
-    player2.velocity.x= -5
-} else if (keys.d.pressed && player2.lastKey === 'd'){
-    player2.velocity.x = 5
-}
-
 
 }
 animate()
@@ -105,38 +77,49 @@ animate()
 
 
 
+addEventListener('keydown',({ keyCode }) => {  //this is understandable somehow if you click in inspect element
+console.log(keyCode)
+switch (keyCode){
+    //player1
+    case 65:
+        console.log('left')  //just in case, console.log() is to print
+        break
 
-
-window.addEventListener('keydown', (event) => {
-    
-    switch(event.key){
-        
-        case 'd':
-            keys.d.pressed = true
-            player1.lastKey = 'd'
-            break
-            case 'a':
-            keys.a.pressed = true
-            player1.lastKey = 'a'
-            break
-            case 'w':
-            player1.velocity.y = -20
+        case 68:
+            console.log('right')
             break
 
 
+        case 83:
+            console.log('down')
+            break
 
-            case 'ArrowRight':
-            keys.ArrowRight.pressed = true
-            player2.lastKey= 'ArrowRight'
-            break
-            case 'ArrowLeft':
-            keys.ArrowLeft.pressed = true
-            player2.lastKey= 'ArrowLeft'
-            break
-            case 'ArrowUp':
-            player2.velocity.y = -20
-            break
-            
+     case 87:
+     console.log('up')
+     player1.velocity.y -=20        //idk why im substracting instead of add but it works somehow
+        break
 
-    }
+
+//player2
+
+case 37:
+console.log('left')  
+break
+        case 39:
+            console.log('right')
+            break
+
+
+        case 40:
+            console.log('down')
+            break
+
+     case 38:
+     console.log('up')
+     player2.velocity.y -=20
+        break
+
+
+
+}
 })
