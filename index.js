@@ -17,8 +17,9 @@ canvas.height = 2000
 //All constants to be used in the file.
 const gravity= .7
 const player1 = new Player()       //in here i want to implement the Player class
-const player2 = new Player({ x:150,y: 110},'blue') //you can change the position on the x-axis for it to be closer to player1 or not
+const player2 = new Player({ x:150,y: 100},'blue') //you can change the position on the x-axis for it to be closer to player1 or not
 const platform = new Platform()
+const platform2 = new Platform({ x: 100, y:200}, 'yellow')
 
 const keys = {
 a: {
@@ -97,6 +98,9 @@ animate()
 
 
 //The following code is used for the controls of the players.
+
+//I removed the platform moving along with the keys being pressed and 
+//stored them in a text file "Throwaway_code_from_index"
 
 // For player1 j
 if (keys.d.pressed) {        //where the problem lies

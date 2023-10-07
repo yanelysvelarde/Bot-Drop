@@ -1,0 +1,12 @@
+if(keys.d.pressed){
+platform.position.x -= 5
+}
+else if (keys.a.pressed){
+    platform.position.x += 5
+}
+
+if(keys.arrowRight.pressed){
+    platform.position.x -= 5
+    }else if (keys.arrowLeft.pressed){
+        platform.position.x += 5
+}
