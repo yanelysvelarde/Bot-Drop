@@ -114,19 +114,32 @@ platform.draw()
 // For player1
 if (keys.d.pressed && player1.position.x <400) {
     player1.velocity.x = 5;
-} else if (keys.a.pressed) {
+} else if (keys.a.pressed && player1.position.x > 100) {
     player1.velocity.x = -5;
 } else {
     player1.velocity.x = 0;
+
+if(keys.d.pressed){
+platform.position.x -= 5
+}else if (keys.a.pressed){
+    platform.position.x += 5
+}
+
 }
 
 // For player2
 if (keys.arrowRight.pressed && player2.position.x <400) {
     player2.velocity.x = 5;
-} else if (keys.arrowLeft.pressed) {
+} else if (keys.arrowLeft.pressed && player2.position.x > 100) {
     player2.velocity.x = -5;
 } else {
     player2.velocity.x = 0;
+
+    if(keys.arrowRight.pressed){
+        platform.position.x -= 5
+        }else if (keys.arrowLeft.pressed){
+            platform.position.x += 5
+}
 }
 
 
