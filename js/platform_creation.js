@@ -1,15 +1,17 @@
 class Platform{
-    constructor(){
-        this.position= {
-            x:200,
-            y:100
-        }
+    constructor(position={x:100,y:100},color ='red'){      //the constructor method sets the properties
+        this.position= position;
+        this.lastKey = null;
+    
         this.width = 300
         this.height = 10
+
+        this.color = color
     }
-    draw() {        //context: fillRect creates the rectangle
-        c.fillStyle = 'purple'
-        c.fillRect(this.position.x, this.position.y, this.width, this.height)
+    draw(){             //in here I'm making like a square that will represent later the player
+        c.fillStyle=this.color
+            c.fillRect(this.position.x,this.position.y, this.width, this.height)
+        }
     }
-    }
+
     
