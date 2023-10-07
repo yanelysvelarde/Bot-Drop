@@ -9,14 +9,10 @@ const c = canvas.getContext('2d')
 console.log(c)
 
 
-canvas.width = 1024
+canvas.width = 512
 canvas.height = 576
 
 
-const scaledCanvas = {
-  width: canvas.width / 4,
-  height: canvas.height / 4,
-}
 
 
 
