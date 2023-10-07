@@ -8,9 +8,15 @@ const c = canvas.getContext('2d')
 
 console.log(c)
 
-canvas.width= window.innerWidth         //sooo innerWidht is for it to be the whole widht of the canvas, we could have done this with css but lets not complicate things :'')
-canvas.height= window.innerHeight       //same with the height 
 
+canvas.width = 1024
+canvas.height = 576
+
+
+const scaledCanvas = {
+  width: canvas.width / 4,
+  height: canvas.height / 4,
+}
 
 
 
