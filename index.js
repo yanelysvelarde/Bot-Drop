@@ -11,8 +11,8 @@ canvas.height = 2000;
 
 //All constants to be used in the file.
 const gravity = 0.7;
-const player1 = new Player(); //in here i want to implement the Player class
-const player2 = new Player({ x: 150, y: 100 }, "blue"); //you can change the position on the x-axis for it to be closer to player1 or not
+const player1 = new Player({x: 200, y: 1970}); //in here i want to implement the Player class
+const player2 = new Player({ x: 150, y: 1970 }, "blue"); //you can change the position on the x-axis for it to be closer to player1 or not
 const platform = new Platform();
 const platform2 = new Platform({ x: 100, y: 200 }, "yellow");
 
@@ -83,7 +83,7 @@ function animate() {
   ) {
     player2.velocity.y = 0;
   }
-}
+
 
 //requestAnimationFrame acts like loop...
 //kinda, so it's calling animate an infinity number of times
@@ -95,6 +95,7 @@ player2.update();
 platform.draw();
 platform2.draw();
 requestAnimationFrame(animate); 
+}
 //=======================================================
 
 // The following code is going to be for collisions. The collisions is going to deal with

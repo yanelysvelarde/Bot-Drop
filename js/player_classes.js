@@ -27,6 +27,12 @@ class Player {
     this.draw();
     this.position.x += this.velocity.x;
     this.position.y += this.velocity.y;
+    console.log(
+      this.velocity.x,
+      this.velocity.y,
+      this.position.x,
+      this.position.y
+    );
 
     if (this.position.y + this.height + this.velocity.y <= canvas.height)
       //this is a condition so that the player can stay on the canvas w/o falling
