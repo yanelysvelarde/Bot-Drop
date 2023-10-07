@@ -112,7 +112,7 @@ player2.update()
 platform.draw()
 
 // For player1
-if (keys.a.pressed) {
+if (keys.a.pressed && player1.position.x <400) {
     player1.velocity.x = -5;
 } else if (keys.d.pressed) {
     player1.velocity.x = 5;
@@ -121,7 +121,7 @@ if (keys.a.pressed) {
 }
 
 // For player2
-if (keys.arrowLeft.pressed) {
+if (keys.arrowLeft.pressed && player2.position.x <400) {
     player2.velocity.x = -5;
 } else if (keys.arrowRight.pressed) {
     player2.velocity.x = 5;
