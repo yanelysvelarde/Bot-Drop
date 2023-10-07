@@ -9,14 +9,10 @@ const c = canvas.getContext('2d')
 console.log(c)
 
 
-canvas.width = 1024
+canvas.width = 512
 canvas.height = 576
 
 
-const scaledCanvas = {
-  width: canvas.width / 4,
-  height: canvas.height / 4,
-}
 
 
 
@@ -70,7 +66,7 @@ constructor(){
     this.height = 20
 }
 draw() {        //context: fillRect creates the rectangle
-    c.fillStyle = 'black'
+    c.fillStyle = 'purple'
     c.fillRect(this.position.x, this.position.y, this.width, this.height)
 }
 }
