@@ -10,7 +10,7 @@ canvas.height= window.innerHeight       //same with the height
 const gravity= .5
 
 class Player{      //this is a class of Player. in here we add the properties that defines the player
-constructor(position={x:100,y:100},color ='green'){      //the constructor method sets the properties
+constructor(position={x:100,y:100},color ='purple'){      //the constructor method sets the properties
     this.position= position;
 
     this.velocity= {
@@ -45,7 +45,7 @@ else this.velocity.y = 0
 }
 
 const player1 = new Player()       //in here i want to implement the Player class
-const player2 = new Player({ x:150,y: 100},'blue')
+const player2 = new Player({ x:150,y: 100},'blue') //you can change the position on the x-axis for it to be closer to player1 or not
 
 
 function animate(){
