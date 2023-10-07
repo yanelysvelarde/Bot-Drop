@@ -22,10 +22,10 @@ const platform = new Platform()
 
 const keys = {
 a: {
-    pressed: false 
+    pressed: true 
 }, 
 d: {
-    pressed: false 
+    pressed: true 
 },
 arrowLeft: {
     pressed: false 
