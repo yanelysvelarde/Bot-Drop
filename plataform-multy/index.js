@@ -38,7 +38,9 @@ c.fillStyle=this.color
 
 update(){   //altering the player/s properties
 this.draw()
+this.position.x += this.velocity.x
 this.position.y += this.velocity.y
+
 
 
 if(this.position.y + this.height + this.velocity.y <=canvas.height)     //this is a condition so that the player can stay on the canvas w/o falling
@@ -87,6 +89,7 @@ switch (keyCode){
 
         case 68:
             console.log('right')
+            player1.velocity.x +=1
             break
 
 
@@ -96,7 +99,7 @@ switch (keyCode){
 
      case 87:
      console.log('up')
-     player1.velocity.y -=20        //idk why im substracting instead of add but it works somehow
+     player1.velocity.y -=20       //idk why im substracting instead of add but it works somehow
         break
 
 
@@ -107,6 +110,7 @@ console.log('left')
 break
         case 39:
             console.log('right')
+            player2.velocity.x +=1
             break
 
 
@@ -123,3 +127,55 @@ break
 
 }
 })
+
+
+
+
+addEventListener('keyup',({ keyCode }) => {  
+    console.log(keyCode)
+    switch (keyCode){
+        //player1
+        case 65:
+            console.log('left')  
+            break
+    
+            case 68:
+                console.log('right')
+                player1.velocity.x =0
+                break
+    
+    
+            case 83:
+                console.log('down')
+                break
+    
+         case 87:
+         console.log('up')
+         player1.velocity.y -=20     
+            break
+    
+    
+    //player2
+    
+    case 37:
+    console.log('left')  
+    break
+            case 39:
+                console.log('right')
+                player2.velocity.x =0
+                break
+    
+    
+            case 40:
+                console.log('down')
+                break
+    
+         case 38:
+         console.log('up')
+         player2.velocity.y -=20
+            break
+    
+    
+    
+    }
+    })
