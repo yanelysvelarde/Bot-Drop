@@ -53,6 +53,7 @@ c.clearRect(0,0,canvas.width,canvas.height)           //clears canvas
 player1.update()
 player2.update()
 platform.draw()
+platform2.draw()
 
 //=======================================================
   
