@@ -8,8 +8,9 @@ const c = canvas.getContext('2d')
 
 console.log(c)
 
-canvas.width= innerWidth         //sooo innerWidht is for it to be the whole widht of the canvas, we could have done this with css but lets not complicate things :'')
-canvas.height= innerHeight       //same with the height 
+canvas.width= window.innerWidth         //sooo innerWidht is for it to be the whole widht of the canvas, we could have done this with css but lets not complicate things :'')
+canvas.height= window.innerHeight       //same with the height 
+
 
 
 
@@ -93,13 +94,6 @@ arrowRight: {
 }
 
 }
-
-console.log(player1);
-console.log(player2);
-
-
-
-
 
 
 
