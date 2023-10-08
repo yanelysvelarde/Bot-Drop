@@ -19,10 +19,52 @@ Time spent: **24** hours spent in total
 ## Milestone
 1. Our project started with a game concept and design phase. We wanted to make a game where two people could play on the same keyboard to climb platforms without falling.
 2. Our project utilized HTML and CSS for the game's presentation. We designed a simple but effective user interface, with a canvas element to render the game world.
-3. The heart of our project lay in JavaScript programming. We wrote several scripts to implement game mechanics, character movement, collision detection, and platform generation. Key game elements included gravity, player control, and platform interactions. We also utilized object-oriented programming principles to create classes for players and platforms, making our code modular and organized.
+3. The heart of our project lay in JavaScript programming. We wrote several scripts to implement game mechanics, character movement, collision detection, and platform generation. Key game elements included gravity, player control, and platform interactions. We also utilized object-oriented programming principles to create classes for players and platforms, making our code modular and organized. This are a few examples:
+
+Part of a code that handles keyboard input for controlling a player character in a game.
+  ```
+switch (keyCode) {
+    //player1
+    case 65:
+      console.log("left"); //just in case, console.log() is to print
+      keys.a.pressed = true;
+      player1.lastKey = keyCode;
+      break;
+
+    case 68:
+      console.log("right");
+      keys.d.pressed = true;
+      player1.lastKey = keyCode;
+      break;
+
+    case 83:
+      console.log("down");
+      break;
+
+    case 87:
+      console.log("up");
+      player1.velocity.y -= 12; //idk why im substracting instead of add but it works somehow
+      break;
+```
+Part of code is involved in managing the camera's position, saving the canvas state, and repositioning players under specific conditions the game
+```
+ const cameraX = 0;
+  const cameraY = framePrincipal.position.y - canvas.height / 2;
+  c.save();
+  c.translate(-cameraX, -cameraY);
 
 
-
+  if (!intersects(player1, framePrincipal) && !intersects(player2, framePrincipal)) {
+    
+    player1.position.x = 200;
+    player1.position.y = 1600;
+    player2.position.x = 150;
+    player2.position.y = 1600;
+    
+  }
+```
+4. Player control was a crucial aspect of our project. We implemented controls for two robots, Bot & Drop, allowing them to move left and right and jump. The arrow keys and 'W', 'A', 'S', 'D' keys were used for control. Gravity and collision detection ensured that the characters interacted realistically with the platforms in the game.
+5. 
 
 ## Our beloved robots
 
