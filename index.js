@@ -10,7 +10,7 @@ canvas.width = 512;
 canvas.height = 2000;
 
 //All constants to be used in the file.
-const gravity = 0.7;
+const gravity = 0.6;
 const player1 = new Player({ x: 200, y: 1970 }); //in here i want to implement the Player class
 const player2 = new Player({ x: 150, y: 1970 }, "blue"); //you can change the position on the x-axis for it to be closer to player1 or not
 const platform = new Platform();
@@ -36,10 +36,26 @@ const keys = {
 
 //The follow code will be an experiment to fix the collision issue for all the platforms
 
+
+
+
+
+
+
+
+
 //=============================================================
 //ANIMATE Function
 
 function animate() {
+
+  const cameraX = 0;
+  const cameraY = framePrincipal.position.y - canvas.height / 2;
+  c.save();
+  c.translate(-cameraX, -cameraY);
+
+
+
   //The following code is used for the controls of the players.
 
   //I removed the platform moving along with the keys being pressed and
@@ -97,11 +113,24 @@ function animate() {
 player2.update();
 platform.draw();
 platform2.draw();
+
+c.restore();
+
 requestAnimationFrame(animate); 
 }
 //=======================================================
 
 animate();
+
+
+
+
+
+
+
+
+
+
 
 
 
