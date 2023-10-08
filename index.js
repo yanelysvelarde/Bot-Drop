@@ -14,7 +14,9 @@ const gravity = 0.7;
 const player1 = new Player({ x: 200, y: 1970 }); //in here i want to implement the Player class
 const player2 = new Player({ x: 150, y: 1970 }, "blue"); //you can change the position on the x-axis for it to be closer to player1 or not
 const platform = new Platform();
-const platform2 = new Platform({ x: 100, y: 400 }, "yellow");
+const platform2 = new Platform({ x: 100, y: 200 }, "yellow");
+const framePrincipal = new Frame()
+
 
 const keys = {
   a: {
@@ -42,6 +44,8 @@ function animate() {
 
   //I removed the platform moving along with the keys being pressed and
   //stored them in a text file "Throwaway_code_from_index"
+
+
 
   // For player1 j
   if (keys.d.pressed) {
@@ -88,11 +92,12 @@ function animate() {
 
   c.clearRect(0, 0, canvas.width, canvas.height); //clears canvas
 
+  framePrincipal.draw();
   player1.update();
-  player2.update();
-  platform.draw();
-  platform2.draw();
-  requestAnimationFrame(animate);
+player2.update();
+platform.draw();
+platform2.draw();
+requestAnimationFrame(animate); 
 }
 //=======================================================
 
