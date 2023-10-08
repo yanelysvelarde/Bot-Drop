@@ -35,4 +35,4 @@ class Frame {
               this.velocity.y += gravity; //so like an acceleration over time
             else this.velocity.y = 0;
           }
-    }
+    }  
