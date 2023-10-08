@@ -69,7 +69,7 @@ function animate() {
     player1.position.x + player1.width >= platform.position.x &&
     player1.position.x <= platform.position.x + platform.width
   ) {
-    //x-axis 
+    //x-axis
     player1.velocity.y = 0; //Stops the players from moving after standing on top of platform.
   }
   //The else if statements are going to be used for the players phasing UP through the platforms.
@@ -95,7 +95,6 @@ function animate() {
   requestAnimationFrame(animate);
 }
 //=======================================================
-
 
 animate();
 
