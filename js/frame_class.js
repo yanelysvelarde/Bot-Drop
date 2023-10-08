@@ -9,7 +9,7 @@ class Frame {
         this.width = 512
         this.height = 800
         
-        this.color = color 
+        this.color = color  
         
     }
     draw(){                       //in here I'm making like a square that will represent later the player
