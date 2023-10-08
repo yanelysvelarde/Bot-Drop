@@ -63,11 +63,11 @@ function animate() {
 
   if (
     player1.position.y + player1.height <= //collision detection on the y-axis
-      platform(i).position.y &&
+      platform.position.y &&
     player1.position.y + player1.height + player1.velocity.y >=
-      platform(i).position.y &&
-    player1.position.x + player1.width >= platform(i).position.x &&
-    player1.position.x <= platform(i).position.x + platform(i).width
+      platform.position.y &&
+    player1.position.x + player1.width >= platform.position.x &&
+    player1.position.x <= platform.position.x + platform.width
   ) {
     //x-axis
     player1.velocity.y = 0; //Stops the players from moving after standing on top of platform.
@@ -77,11 +77,11 @@ function animate() {
   //Player 2's Collision
 
   if (
-    player2.position.y + player2.height <= platform(i).position.y &&
+    player2.position.y + player2.height <= platform.position.y &&
     player2.position.y + player2.height + player2.velocity.y >=
-      platform(i).position.y &&
-    player2.position.x + player2.width >= platform(i).position.x &&
-    player2.position.x <= platform(i).position.x + platform(i).width
+      platform.position.y &&
+    player2.position.x + player2.width >= platform.position.x &&
+    player2.position.x <= platform.position.x + platform.width
   ) {
     player2.velocity.y = 0;
   }
