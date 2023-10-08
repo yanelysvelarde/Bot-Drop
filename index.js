@@ -48,11 +48,11 @@ const keys = {
 
 function animate() {
 
-  const cameraX = 0;
-  const cameraY = framePrincipal.position.y - canvas.height / 2;
-  c.save();
-  c.translate(-cameraX, -cameraY);
 
+  const cameraX = 0;
+  const cameraY = frame_class.position.y - canvas.height / 2;
+  c.save();
+  c.translate(0, -cameraY);
 
 
   //The following code is used for the controls of the players.
@@ -159,6 +159,19 @@ animate();
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 //=============================================================
 
 addEventListener("keydown", ({ keyCode }) => {
@@ -243,4 +256,4 @@ addEventListener("keyup", ({ keyCode }) => {
       console.log("down");
       break;
   }
-});
+})
