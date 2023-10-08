@@ -90,9 +90,9 @@ function animate() {
   ) {
     // Restart the game by resetting player positions and other necessary variables
     player1.position.x = 200;
-    player1.position.y = 2000;
+    player1.position.y = 1900;
     player2.position.x = 150;
-    player2.position.y = 2000;
+    player2.position.y = 1900;
     // You can reset other game state variables here
   }
 
