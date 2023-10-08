@@ -11,7 +11,7 @@ canvas.height = 2000;
 
 //All constants to be used in the file.
 const gravity = 0.7;
-const player1 = new Player({x: 200, y: 1970}); //in here i want to implement the Player class
+const player1 = new Player({ x: 200, y: 1970 }); //in here i want to implement the Player class
 const player2 = new Player({ x: 150, y: 1970 }, "blue"); //you can change the position on the x-axis for it to be closer to player1 or not
 const platform = new Platform();
 const platform2 = new Platform({ x: 100, y: 200 }, "yellow");
@@ -30,6 +30,9 @@ const keys = {
     pressed: false,
   },
 };
+//=============================================================
+
+//The follow code will be an experiment to fix the collision issue for all the platforms
 
 //=============================================================
 //ANIMATE Function
@@ -58,7 +61,6 @@ function animate() {
     player2.velocity.x = 0;
   }
 
-  //Player 1's Collision
   if (
     player1.position.y + player1.height <= //collision detection on the y-axis
       platform.position.y &&
@@ -84,17 +86,13 @@ function animate() {
     player2.velocity.y = 0;
   }
 
+  c.clearRect(0, 0, canvas.width, canvas.height); //clears canvas
 
-//requestAnimationFrame acts like loop...
-//kinda, so it's calling animate an infinity number of times
-
-c.clearRect(0, 0, canvas.width, canvas.height); //clears canvas
-
-player1.update();
-player2.update();
-platform.draw();
-platform2.draw();
-requestAnimationFrame(animate); 
+  player1.update();
+  player2.update();
+  platform.draw();
+  platform2.draw();
+  requestAnimationFrame(animate);
 }
 //=======================================================
 
