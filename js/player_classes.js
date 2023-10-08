@@ -23,8 +23,12 @@ class Player {
     c.fillRect(this.position.x, this.position.y, this.width, this.height);
   }
   update() {
+<<<<<<< HEAD
     //altering the player/s properties
   
+=======
+    //altering the player's properties
+>>>>>>> e153cd61684c2fed5c6602dbea06cf57aa7c19d0
     this.draw();
     this.position.x += this.velocity.x;
     this.position.y += this.velocity.y;
