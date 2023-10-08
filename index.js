@@ -66,8 +66,6 @@ for (let i = 0; i <= 20; i++) {
   platforms.push(newPlatform); // Add the new platform to the platforms array
 }
 
-
-
 function intersects(obj1, obj2) {
   //logic that will be implemented in animate
   return (
@@ -92,9 +90,9 @@ function animate() {
   ) {
     // Restart the game by resetting player positions and other necessary variables
     player1.position.x = 200;
-    player1.position.y = 1600;
+    player1.position.y = 2000;
     player2.position.x = 150;
-    player2.position.y = 1600;
+    player2.position.y = 2000;
     // You can reset other game state variables here
   }
 
