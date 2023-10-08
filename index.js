@@ -9,6 +9,8 @@ console.log(c);
 canvas.width = 512;
 canvas.height = 2000;
 
+
+
 //All constants to be used in the file.
 const gravity = 0.6;
 const player1 = new Player({ x: 200, y: 1970 }); //in here i want to implement the Player class
