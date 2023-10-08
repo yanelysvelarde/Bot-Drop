@@ -10,11 +10,14 @@ class enemy_type_1{
         this.w = w;
         this.h = h;
     }
-// function renderEnemy(){
-// pass
-// }
+    renderEnemy(){ //renders the enemy on canvas
+       //not sure how to do this yet??
+    }
+    animate() {
+        //??
+        this.x += 1; // this moves the enemy to right but want it to move back and forth (?)
+    }
 
-// function animate(){
-// pass
-// }
-}
+
+    }
+    
