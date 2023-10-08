@@ -30,11 +30,11 @@ class Frame {
               this.position.y
             );
         
-            if (this.position.y + this.height + this.velocity.y <= canvas.height){
-              //this is a condition so that the player can stay on the canvas w/o falling
-              this.velocity.y -= gravity; //so like an acceleration over time
-              
-            }
-            else this.velocity.y = 0;
+            if (this.position.y + this.height + this.velocity.y <= canvas.height) {
+              // This is a condition so that the player can stay on the canvas without falling
+              const customGravity = 0.003; // Replace 0.5 with your desired gravity value
+              this.velocity.y -= customGravity; // Acceleration over time using custom gravity
+          } else {
+              this.velocity.y = 0;
           }
-    }  
+        }}
