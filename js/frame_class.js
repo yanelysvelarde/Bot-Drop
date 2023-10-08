@@ -38,3 +38,4 @@ class Frame {
               this.velocity.y = 0;
           }
         }}
+        
