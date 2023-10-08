@@ -9,21 +9,39 @@ console.log(c);
 canvas.width = 512;
 canvas.height = 2000;
 
-
-
 //All constants to be used in the file.
-const gravity = 0.6;
+const gravity = 0.5;
 const player1 = new Player({ x: 200, y: 1970 }); //in here i want to implement the Player class
 const player2 = new Player({ x: 150, y: 1970 }, "blue"); //you can change the position on the x-axis for it to be closer to player1 or not
 
 const platforms = [];
 const platform1 = new Platform();
+
 const platform2 = new Platform({ x: 150, y: 1700 }, "yellow");
+const platform3 = new Platform({ x: 375, y: 1700 });
+const platform4 = new Platform({ x: 250, y: 1600 });
+const platform5 = new Platform({ x: 0, y: 1600 });
+const platform6 = new Platform({ x: -50, y: 1500 });
+const platform7 = new Platform({ x: -50, y: 1400 });
+const platform8 = new Platform({ x: -50, y: 1300 });
+const platform9 = new Platform({ x: 200, y: 1200 });
+const platform10 = new Platform({ x: 400, y: 1100 });
+const platform11 = new Platform({ x: 480, y: 1000 });
+const platform12 = new Platform({ x: 480, y: 900 });
+const platform13 = new Platform({ x: 460, y: 800 });
+const platform14 = new Platform({ x: 430, y: 700 });
+const platform15 = new Platform({ x: 200, y: 600 });
+const platform16 = new Platform({ x: -20, y: 500 });
+const platform17 = new Platform({ x: 0, y: 400 });
+const platform18 = new Platform({ x: 220, y: 300 });
+const platform19 = new Platform({ x: 400, y: 200 });
+const platform20 = new Platform({ x: 300, y: 100 });
+const platform21 = new Platform({ x: 208, y: 0 });
+
 const framePrincipal = new Frame();
 
-platforms.push(platform1, platform2);
-
-
+platforms.push(platform1, platform2, platform3, platform4, platform5, platform6, platform7, platform8, platform9, platform10, platform11
+  ,platform12, platform13, platform14, platform15, platform16, platform17, platform18, platform19, platform20,platform21);
 
 const keys = {
   a: {
@@ -43,17 +61,15 @@ const keys = {
 
 //The follow code will be an experiment to fix the collision issue for all the platforms
 
-
-for (let i = 0; i < 20; i++) {
+for (let i = 0; i <= 20; i++) {
   const newPlatform = new Platform();
   platforms.push(newPlatform); // Add the new platform to the platforms array
 }
 
 
 
-
-
-function intersects(obj1, obj2) {   //logic that will be implemented in animate
+function intersects(obj1, obj2) {
+  //logic that will be implemented in animate
   return (
     obj1.position.x < obj2.position.x + obj2.width &&
     obj1.position.x + obj1.width > obj2.position.x &&
@@ -65,15 +81,15 @@ function intersects(obj1, obj2) {   //logic that will be implemented in animate
 //ANIMATE Function
 
 function animate() {
-
-
   const cameraX = 0;
   const cameraY = framePrincipal.position.y - canvas.height / 2;
   c.save();
   c.translate(-cameraX, -cameraY);
 
-
-  if (!intersects(player1, framePrincipal) && !intersects(player2, framePrincipal)) {
+  if (
+    !intersects(player1, framePrincipal) &&
+    !intersects(player2, framePrincipal)
+  ) {
     // Restart the game by resetting player positions and other necessary variables
     player1.position.x = 200;
     player1.position.y = 1600;
@@ -81,8 +97,6 @@ function animate() {
     player2.position.y = 1600;
     // You can reset other game state variables here
   }
-
-
 
   //The following code is used for the controls of the players.
 
@@ -112,12 +126,6 @@ function animate() {
   //This is going to be disgustingly long but bear with me, guys. The platform code HAS to go inside the
   //Animate() loop function here to account for the collisions.
 
-
-
-
-
-
-
   //So far, these collisions are only for the top and bottom of the platforms.
   //PLAYER 1 PLATFORM COLLISIONS
   for (const currentPlatform of platforms) {
@@ -131,9 +139,9 @@ function animate() {
       player1.velocity.y = 0;
     } else if (
       player1.position.y + player1.height >=
-        currentPlatform.position.y + 2 * currentPlatform.height &&
+        currentPlatform.position.y + 6 * currentPlatform.height &&
       player1.position.y + player1.height + player1.velocity.y <=
-        currentPlatform.position.y + 2 * currentPlatform.height &&
+        currentPlatform.position.y + 6 * currentPlatform.height &&
       player1.position.x + player1.width >= currentPlatform.position.x &&
       player1.position.x <= currentPlatform.position.x + currentPlatform.width
     ) {
@@ -151,9 +159,9 @@ function animate() {
       player2.velocity.y = 0;
     } else if (
       player2.position.y + player2.height >=
-        currentPlatform.position.y + 2 * currentPlatform.height &&
+        currentPlatform.position.y + 6 * currentPlatform.height &&
       player2.position.y + player2.height + player2.velocity.y <=
-        currentPlatform.position.y + 2 * currentPlatform.height &&
+        currentPlatform.position.y + 6 * currentPlatform.height &&
       player2.position.x + player2.width >= currentPlatform.position.x &&
       player2.position.x <= currentPlatform.position.x + currentPlatform.width
     ) {
@@ -166,22 +174,19 @@ function animate() {
 
   framePrincipal.update();
   player1.update();
-player2.update();
+  player2.update();
 
-for (const currentPlatform of platforms) {
-  currentPlatform.draw();
-}
+  for (const currentPlatform of platforms) {
+    currentPlatform.draw();
+  }
 
-c.restore();
+  c.restore();
 
-requestAnimationFrame(animate); 
+  requestAnimationFrame(animate);
 }
 //=======================================================
 
 animate();
-
-
-
 
 //=============================================================
 
@@ -236,7 +241,6 @@ addEventListener("keydown", ({ keyCode }) => {
   }
 });
 
-
 //=============================================================
 
 addEventListener("keyup", ({ keyCode }) => {
@@ -268,4 +272,4 @@ addEventListener("keyup", ({ keyCode }) => {
       console.log("down");
       break;
   }
-})
+});
