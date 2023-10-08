@@ -13,9 +13,15 @@ canvas.height = 2000;
 const gravity = 0.6;
 const player1 = new Player({ x: 200, y: 1970 }); //in here i want to implement the Player class
 const player2 = new Player({ x: 150, y: 1970 }, "blue"); //you can change the position on the x-axis for it to be closer to player1 or not
-const platform = new Platform();
+
+const platforms = [];
+const platform1 = new Platform();
 const platform2 = new Platform({ x: 150, y: 1800 }, "yellow");
 const framePrincipal = new Frame();
+
+platforms.push(platform1, platform2);
+
+
 
 const keys = {
   a: {
@@ -36,13 +42,16 @@ const keys = {
 //The follow code will be an experiment to fix the collision issue for all the platforms
 
 
+for (let i = 0; i < 20; i++) {
+  const newPlatform = new Platform();
+  platforms.push(newPlatform); // Add the new platform to the platforms array
+}
 
 
 
 
 
-
-function intersects(obj1, obj2) {
+function intersects(obj1, obj2) {   //logic that will be implemented in animate
   return (
     obj1.position.x < obj2.position.x + obj2.width &&
     obj1.position.x + obj1.width > obj2.position.x &&
@@ -102,59 +111,52 @@ function animate() {
   //Animate() loop function here to account for the collisions.
 
 
+
+
+
+
+
   //So far, these collisions are only for the top and bottom of the platforms.
   //PLAYER 1 PLATFORM COLLISIONS
-  if (
-    player1.position.y + player1.height <= platform.position.y &&
-    player1.position.y + player1.height + player1.velocity.y >=
-      platform.position.y &&
-    player1.position.x + player1.width >= platform.position.x &&
-    player1.position.x <= platform.position.x + platform.width
-  ) {
-    player1.velocity.y = 0;
-  }
-  //The else if statements are going to be used for the players phasing UP through the platforms.
-  else if (
-    player1.position.y + player1.height >=
-      platform.position.y + 2 * platform.height &&
-    player1.position.y + player1.height + player1.velocity.y <=
-      platform.position.y + 2 * platform.height &&
-    player1.position.x + player1.width >= platform.position.x &&
-    player1.position.x <= platform.position.x + platform.width
-  ) {
-    player1.velocity.y = 0;
-  }
-  //PLATFORM2 P1
-  if (
-    player1.position.y + player1.height <= platform2.position.y &&
-    player1.position.y + player1.height + player1.velocity.y >=
-      platform2.position.y &&
-    player1.position.x + player1.width >= platform2.position.x &&
-    player1.position.x <= platform2.position.x + platform2.width
-  ) {
-    player1.velocity.y = 0;
-  }
-  //The else if statements are going to be used for the players phasing UP through the platforms.
-  else if (
-    player1.position.y + player1.height >=
-      platform2.position.y + 2 * platform2.height &&
-    player1.position.y + player1.height + player1.velocity.y <=
-      platform2.position.y + 2 * platform2.height &&
-    player1.position.x + player1.width >= platform2.position.x &&
-    player1.position.x <= platform2.position.x + platform2.width
-  ) {
-    player1.velocity.y = 0;
-  }
+  for (const currentPlatform of platforms) {
+    if (
+      player1.position.y + player1.height <= currentPlatform.position.y &&
+      player1.position.y + player1.height + player1.velocity.y >=
+        currentPlatform.position.y &&
+      player1.position.x + player1.width >= currentPlatform.position.x &&
+      player1.position.x <= currentPlatform.position.x + currentPlatform.width
+    ) {
+      player1.velocity.y = 0;
+    } else if (
+      player1.position.y + player1.height >=
+        currentPlatform.position.y + 2 * currentPlatform.height &&
+      player1.position.y + player1.height + player1.velocity.y <=
+        currentPlatform.position.y + 2 * currentPlatform.height &&
+      player1.position.x + player1.width >= currentPlatform.position.x &&
+      player1.position.x <= currentPlatform.position.x + currentPlatform.width
+    ) {
+      player1.velocity.y = 0;
+    }
 
-  //PLAYER 2 PLATFORM COLLISIONS
-  if (
-    player2.position.y + player2.height <= platform.position.y &&
-    player2.position.y + player2.height + player2.velocity.y >=
-      platform.position.y &&
-    player2.position.x + player2.width >= platform.position.x &&
-    player2.position.x <= platform.position.x + platform.width
-  ) { 
-    player2.velocity.y = 0;
+    // Repeat the same collision checks for player2 if needed
+    if (
+      player2.position.y + player2.height <= currentPlatform.position.y &&
+      player2.position.y + player2.height + player2.velocity.y >=
+        currentPlatform.position.y &&
+      player2.position.x + player2.width >= currentPlatform.position.x &&
+      player2.position.x <= currentPlatform.position.x + currentPlatform.width
+    ) {
+      player2.velocity.y = 0;
+    } else if (
+      player2.position.y + player2.height >=
+        currentPlatform.position.y + 2 * currentPlatform.height &&
+      player2.position.y + player2.height + player2.velocity.y <=
+        currentPlatform.position.y + 2 * currentPlatform.height &&
+      player2.position.x + player2.width >= currentPlatform.position.x &&
+      player2.position.x <= currentPlatform.position.x + currentPlatform.width
+    ) {
+      player2.velocity.y = 0;
+    }
   }
 
   //==================================================
@@ -163,8 +165,10 @@ function animate() {
   framePrincipal.update();
   player1.update();
 player2.update();
-platform.draw();
-platform2.draw();
+
+for (const currentPlatform of platforms) {
+  currentPlatform.draw();
+}
 
 c.restore();
 
@@ -173,19 +177,6 @@ requestAnimationFrame(animate);
 //=======================================================
 
 animate();
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
