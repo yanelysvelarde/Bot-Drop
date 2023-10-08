@@ -220,4 +220,5 @@ addEventListener("keyup", ({ keyCode }) => {
       console.log("down");
       break;
   }
-});
+})
+}
