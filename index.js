@@ -135,7 +135,7 @@ function animate() {
       platform.position.y &&
     player2.position.x + player2.width >= platform.position.x &&
     player2.position.x <= platform.position.x + platform.width
-  ) {
+  ) { 
     player2.velocity.y = 0;
   }
 
