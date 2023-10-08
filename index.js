@@ -52,7 +52,7 @@ function animate() {
   const cameraX = 0;
   const cameraY = framePrincipal.position.y - canvas.height / 2;
   c.save();
-  c.translate(0, -cameraY);
+  c.translate(-cameraX, -cameraY);
 
 
   //The following code is used for the controls of the players.
