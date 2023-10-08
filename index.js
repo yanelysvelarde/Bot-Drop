@@ -14,7 +14,7 @@ const gravity = 0.7;
 const player1 = new Player({ x: 200, y: 1970 }); //in here i want to implement the Player class
 const player2 = new Player({ x: 150, y: 1970 }, "blue"); //you can change the position on the x-axis for it to be closer to player1 or not
 const platform = new Platform();
-const platform2 = new Platform({ x: 100, y: 200 }, "yellow");
+const platform2 = new Platform({ x: 100, y: 400 }, "yellow");
 
 const keys = {
   a: {
@@ -69,7 +69,7 @@ function animate() {
     player1.position.x + player1.width >= platform.position.x &&
     player1.position.x <= platform.position.x + platform.width
   ) {
-    //x-axis
+    //x-axis 
     player1.velocity.y = 0; //Stops the players from moving after standing on top of platform.
   }
   //The else if statements are going to be used for the players phasing UP through the platforms.
@@ -96,14 +96,8 @@ function animate() {
 }
 //=======================================================
 
-// The following code is going to be for collisions. The collisions is going to deal with
-//how the players are going to interact with the platforms.
-
-//The execution of the code below the if statements will change the velocity of the players to 0
-//So they don't appear falling down THROUGH the platforms.
 
 animate();
-//===============================
 
 //=============================================================
 

@@ -5,7 +5,7 @@ class Platform {
     this.lastKey = null;
 
     this.width = 300;
-    this.height = 10;
+    this.height = 20;
 
     this.color = color;
   }
