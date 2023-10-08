@@ -24,6 +24,7 @@ class Player {
   }
   update() {
     //altering the player/s properties
+  
     this.draw();
     this.position.x += this.velocity.x;
     this.position.y += this.velocity.y;
