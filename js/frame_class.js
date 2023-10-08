@@ -4,7 +4,7 @@ class Frame {
         this.velocity = {
             x: 0,
             y: 0,
-          };
+          };   
 
         this.width = 512
         this.height = 800
