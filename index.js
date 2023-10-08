@@ -172,23 +172,15 @@ addEventListener("keyup", ({ keyCode }) => {
       console.log("left");
       keys.a.pressed = false;
       break;
-
     case 68:
       console.log("right");
       keys.d.pressed = false;
       break;
-
     case 83:
       console.log("down");
       break;
-
-    case 87:
-      console.log("up");
-      player1.velocity.y -= 12;
-      break;
-
+      
     //player2
-
     case 37:
       console.log("left");
       keys.arrowLeft.pressed = false;
@@ -197,14 +189,8 @@ addEventListener("keyup", ({ keyCode }) => {
       console.log("right");
       keys.arrowRight.pressed = false;
       break;
-
     case 40:
       console.log("down");
-      break;
-
-    case 38:
-      console.log("up");
-      player2.velocity.y -= 12;
       break;
   }
 });
