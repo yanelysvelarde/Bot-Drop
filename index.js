@@ -35,10 +35,26 @@ const keys = {
 
 //The follow code will be an experiment to fix the collision issue for all the platforms
 
+
+
+
+
+
+
+
+
 //=============================================================
 //ANIMATE Function
 
 function animate() {
+
+
+  const cameraX = 0;
+  const cameraY = frame_class.position.y - canvas.height / 2;
+  c.save();
+  c.translate(0, -cameraY);
+
+
   //The following code is used for the controls of the players.
 
   //I removed the platform moving along with the keys being pressed and
@@ -89,7 +105,7 @@ function animate() {
     player1.position.x <= platform.position.x + platform.width
   ) {
     player1.velocity.y = 0;
-
+  }
   //PLATFORM2 P1
   if (
     player1.position.y + player1.height <= platform2.position.y &&
@@ -128,10 +144,10 @@ function animate() {
 
   framePrincipal.update();
   player1.update();
-  player2.update();
-  platform.draw();
-  platform2.draw();
-  requestAnimationFrame(animate);
+player2.update();
+platform.draw();
+platform2.draw();
+requestAnimationFrame(animate); 
 }
 //=======================================================
 
@@ -205,6 +221,7 @@ addEventListener("keydown", ({ keyCode }) => {
   }
 });
 
+
 //=============================================================
 
 addEventListener("keyup", ({ keyCode }) => {
@@ -237,4 +254,3 @@ addEventListener("keyup", ({ keyCode }) => {
       break;
   }
 })
-}
