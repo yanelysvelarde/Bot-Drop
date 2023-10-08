@@ -17,7 +17,7 @@ const player2 = new Player({ x: 150, y: 1970 }, "blue"); //you can change the po
 const platforms = [];
 const platform1 = new Platform();
 
-const platform2 = new Platform({ x: 150, y: 1700 });
+const platform2 = new Platform({ x: 150, y: 1800 });
 const platform3 = new Platform({ x: 375, y: 1700 });
 const platform4 = new Platform({ x: 250, y: 1600 });
 const platform5 = new Platform({ x: 0, y: 1600 });
