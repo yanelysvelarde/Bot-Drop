@@ -42,7 +42,14 @@ const keys = {
 
 
 
-
+function intersects(obj1, obj2) {
+  return (
+    obj1.position.x < obj2.position.x + obj2.width &&
+    obj1.position.x + obj1.width > obj2.position.x &&
+    obj1.position.y < obj2.position.y + obj2.height &&
+    obj1.position.y + obj1.height > obj2.position.y
+  );
+}
 //=============================================================
 //ANIMATE Function
 
@@ -53,6 +60,17 @@ function animate() {
   const cameraY = framePrincipal.position.y - canvas.height / 2;
   c.save();
   c.translate(-cameraX, -cameraY);
+
+
+  if (!intersects(player1, framePrincipal) && !intersects(player2, framePrincipal)) {
+    // Restart the game by resetting player positions and other necessary variables
+    player1.position.x = 200;
+    player1.position.y = 1600;
+    player2.position.x = 150;
+    player2.position.y = 1600;
+    // You can reset other game state variables here
+  }
+
 
 
   //The following code is used for the controls of the players.

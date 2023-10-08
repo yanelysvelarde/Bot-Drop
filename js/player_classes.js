@@ -8,7 +8,7 @@ class Player {
     this.lastKey = null;
 
     this.velocity = {
-      x: 0,
+      x: 5,
       y: 0,
     };
 
