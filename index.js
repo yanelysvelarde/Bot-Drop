@@ -92,7 +92,7 @@ function animate() {
 
   c.clearRect(0, 0, canvas.width, canvas.height); //clears canvas
 
-  framePrincipal.draw();
+  framePrincipal.update();
   player1.update();
 player2.update();
 platform.draw();

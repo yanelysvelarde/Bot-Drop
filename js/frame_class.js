@@ -19,7 +19,7 @@ class Frame {
         }
         
         update() {
-            //altering the player/s properties
+            
             this.draw();
             this.position.x += this.velocity.x;
             this.position.y += this.velocity.y;
@@ -30,9 +30,11 @@ class Frame {
               this.position.y
             );
         
-            if (this.position.y + this.height + this.velocity.y <= canvas.height)
+            if (this.position.y + this.height + this.velocity.y <= canvas.height){
               //this is a condition so that the player can stay on the canvas w/o falling
-              this.velocity.y += gravity; //so like an acceleration over time
+              this.velocity.y -= gravity; //so like an acceleration over time
+              
+            }
             else this.velocity.y = 0;
           }
     }  
