@@ -1,5 +1,5 @@
 class Frame {
-    constructor(position = { x: 0, y: canvas.height - 800 },color ='white',){      //the constructor method sets the properties
+    constructor(position = { x: 0, y: canvas.height - 800 },color ='transparent',){      //the constructor method sets the properties
         this.position= position;
         this.velocity = {
             x: 0,
