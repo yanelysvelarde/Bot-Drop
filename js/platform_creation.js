@@ -1,5 +1,5 @@
 class Platform {
-  constructor(position = { x: 0, y: 1900 }, color = "black") {
+  constructor(position = { x: 0, y: 1900 }, color = "green") {
     //the constructor method sets the properties
     this.position = position;
     this.lastKey = null;
