@@ -2,7 +2,7 @@
 
 class Player {
   //this is a class of Player. in here we add the properties that defines the player
-  constructor(position = { x: 100, y: 100 }, color = "red") {
+  constructor(position = { x: 100, y: 100 }, color = "purple") {
     //the constructor method sets the properties
     this.position = position;
     this.lastKey = null;
