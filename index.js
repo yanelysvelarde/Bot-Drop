@@ -50,7 +50,7 @@ function animate() {
 
 
   const cameraX = 0;
-  const cameraY = frame_class.position.y - canvas.height / 2;
+  const cameraY = framePrincipal.position.y - canvas.height / 2;
   c.save();
   c.translate(-cameraX, -cameraY);
 
