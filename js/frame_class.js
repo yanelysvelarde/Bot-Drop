@@ -12,7 +12,7 @@ class Frame {
         this.color = color 
         
     }
-    draw(){             //in here I'm making like a square that will represent later the player
+    draw(){                       //in here I'm making like a square that will represent later the player
         c.fillStyle = this.color;
     c.fillRect(this.position.x, this.position.y, this.width, this.height);
     
