@@ -101,14 +101,7 @@ requestAnimationFrame(animate);
 }
 //=======================================================
 
-// The following code is going to be for collisions. The collisions is going to deal with
-//how the players are going to interact with the platforms.
-
-//The execution of the code below the if statements will change the velocity of the players to 0
-//So they don't appear falling down THROUGH the platforms.
-
 animate();
-//===============================
 
 //=============================================================
 
