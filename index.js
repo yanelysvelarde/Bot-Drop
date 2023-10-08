@@ -18,7 +18,7 @@ const player2 = new Player({ x: 150, y: 1970 }, "blue"); //you can change the po
 
 const platforms = [];
 const platform1 = new Platform();
-const platform2 = new Platform({ x: 150, y: 1800 }, "yellow");
+const platform2 = new Platform({ x: 150, y: 1700 }, "yellow");
 const framePrincipal = new Frame();
 
 platforms.push(platform1, platform2);
