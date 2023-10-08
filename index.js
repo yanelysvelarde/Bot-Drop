@@ -186,6 +186,7 @@ animate();
 addEventListener("keydown", ({ keyCode }) => {
   //this is understandable somehow if you click in inspect element
   console.log(keyCode);
+
   switch (keyCode) {
     //player1
     case 65:
