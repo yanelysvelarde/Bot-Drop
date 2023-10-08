@@ -105,7 +105,7 @@ function animate() {
     player1.position.x <= platform.position.x + platform.width
   ) {
     player1.velocity.y = 0;
-
+  }
   //PLATFORM2 P1
   if (
     player1.position.y + player1.height <= platform2.position.y &&
@@ -147,20 +147,14 @@ function animate() {
 player2.update();
 platform.draw();
 platform2.draw();
+
+c.restore();
+
 requestAnimationFrame(animate); 
 }
 //=======================================================
 
 animate();
-
-
-
-
-
-
-
-
-
 
 
 
