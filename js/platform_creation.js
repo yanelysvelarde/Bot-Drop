@@ -1,10 +1,10 @@
 class Platform {
-  constructor(position = { x: 50, y: 1800 }, color = "red") {
+  constructor(position = { x: 0, y: 1900 }, color = "red") {
     //the constructor method sets the properties
     this.position = position;
     this.lastKey = null;
 
-    this.width = 200;
+    this.width = 100;
     this.height = 20;
 
     this.color = color;
