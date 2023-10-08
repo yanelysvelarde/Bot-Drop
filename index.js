@@ -10,13 +10,12 @@ canvas.width = 512;
 canvas.height = 2000;
 
 //All constants to be used in the file.
-const gravity = 0.7;
+const gravity = 0.6;
 const player1 = new Player({ x: 200, y: 1970 }); //in here i want to implement the Player class
 const player2 = new Player({ x: 150, y: 1970 }, "blue"); //you can change the position on the x-axis for it to be closer to player1 or not
 const platform = new Platform();
-const platform2 = new Platform({ x: 100, y: 200 }, "yellow");
-const framePrincipal = new Frame()
-
+const platform2 = new Platform({ x: 150, y: 1800 }, "yellow");
+const framePrincipal = new Frame();
 
 const keys = {
   a: {
@@ -45,8 +44,6 @@ function animate() {
   //I removed the platform moving along with the keys being pressed and
   //stored them in a text file "Throwaway_code_from_index"
 
-
-
   // For player1 j
   if (keys.d.pressed) {
     player1.velocity.x = 5;
@@ -65,21 +62,57 @@ function animate() {
     player2.velocity.x = 0;
   }
 
+  //======================================================
+  //The following disgusting line of if statements are going to all account for the collisions for the platforms
+  //This is going to be disgustingly long but bear with me, guys. The platform code HAS to go inside the
+  //Animate() loop function here to account for the collisions.
+
+
+  //So far, these collisions are only for the top and bottom of the platforms.
+  //PLAYER 1 PLATFORM COLLISIONS
   if (
-    player1.position.y + player1.height <= //collision detection on the y-axis
-      platform.position.y &&
+    player1.position.y + player1.height <= platform.position.y &&
     player1.position.y + player1.height + player1.velocity.y >=
       platform.position.y &&
     player1.position.x + player1.width >= platform.position.x &&
     player1.position.x <= platform.position.x + platform.width
   ) {
-    //x-axis
-    player1.velocity.y = 0; //Stops the players from moving after standing on top of platform.
+    player1.velocity.y = 0;
   }
   //The else if statements are going to be used for the players phasing UP through the platforms.
+  else if (
+    player1.position.y + player1.height >=
+      platform.position.y + 2 * platform.height &&
+    player1.position.y + player1.height + player1.velocity.y <=
+      platform.position.y + 2 * platform.height &&
+    player1.position.x + player1.width >= platform.position.x &&
+    player1.position.x <= platform.position.x + platform.width
+  ) {
+    player1.velocity.y = 0;
 
-  //Player 2's Collision
+  //PLATFORM2 P1
+  if (
+    player1.position.y + player1.height <= platform2.position.y &&
+    player1.position.y + player1.height + player1.velocity.y >=
+      platform2.position.y &&
+    player1.position.x + player1.width >= platform2.position.x &&
+    player1.position.x <= platform2.position.x + platform2.width
+  ) {
+    player1.velocity.y = 0;
+  }
+  //The else if statements are going to be used for the players phasing UP through the platforms.
+  else if (
+    player1.position.y + player1.height >=
+      platform2.position.y + 2 * platform2.height &&
+    player1.position.y + player1.height + player1.velocity.y <=
+      platform2.position.y + 2 * platform2.height &&
+    player1.position.x + player1.width >= platform2.position.x &&
+    player1.position.x <= platform2.position.x + platform2.width
+  ) {
+    player1.velocity.y = 0;
+  }
 
+  //PLAYER 2 PLATFORM COLLISIONS
   if (
     player2.position.y + player2.height <= platform.position.y &&
     player2.position.y + player2.height + player2.velocity.y >=
@@ -90,14 +123,15 @@ function animate() {
     player2.velocity.y = 0;
   }
 
+  //==================================================
   c.clearRect(0, 0, canvas.width, canvas.height); //clears canvas
 
   framePrincipal.update();
   player1.update();
-player2.update();
-platform.draw();
-platform2.draw();
-requestAnimationFrame(animate); 
+  player2.update();
+  platform.draw();
+  platform2.draw();
+  requestAnimationFrame(animate);
 }
 //=======================================================
 
@@ -172,7 +206,7 @@ addEventListener("keyup", ({ keyCode }) => {
     case 83:
       console.log("down");
       break;
-      
+
     //player2
     case 37:
       console.log("left");
