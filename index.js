@@ -147,6 +147,9 @@ function animate() {
 player2.update();
 platform.draw();
 platform2.draw();
+
+c.restore();
+
 requestAnimationFrame(animate); 
 }
 //=======================================================

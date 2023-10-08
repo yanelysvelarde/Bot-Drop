@@ -19,7 +19,7 @@ class enemy{
         this.position.y += this.velocity.y;
     }
     // animate() {
-    //     //??
+
     //     this.x += 1; // this moves the enemy to right but want it to move back and forth (?)
     // }
 }
