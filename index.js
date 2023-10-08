@@ -16,7 +16,8 @@ const player2 = new Player({ x: 150, y: 1970 }, "blue"); //you can change the po
 
 const platforms = [];
 const platform1 = new Platform();
-const platform2 = new Platform({ x: 150, y: 1800 });
+
+const platform2 = new Platform({ x: 150, y: 1700 }, "yellow");
 const platform3 = new Platform({ x: 375, y: 1700 });
 const platform4 = new Platform({ x: 250, y: 1600 });
 const platform5 = new Platform({ x: 0, y: 1600 });
@@ -36,6 +37,7 @@ const platform18 = new Platform({ x: 220, y: 300 });
 const platform19 = new Platform({ x: 400, y: 200 });
 const platform20 = new Platform({ x: 300, y: 100 });
 const platform21 = new Platform({ x: 208, y: 0 });
+
 const framePrincipal = new Frame();
 
 platforms.push(platform1, platform2, platform3, platform4, platform5, platform6, platform7, platform8, platform9, platform10, platform11

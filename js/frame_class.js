@@ -3,7 +3,7 @@ class Frame {
         this.position= position;
         this.velocity = {
             x: 0,
-            y: 0,
+            y: 0, 
           };   
  
         this.width = 512
@@ -28,7 +28,7 @@ class Frame {
             this.velocity.y,
             this.position.x,
             this.position.y
-          );
+          );   
       
           if (this.position.y + this.height + this.velocity.y <= canvas.height) {
             // This is a condition so that the player can stay on the canvas without falling
@@ -37,7 +37,7 @@ class Frame {
         } else {
             this.velocity.y = 0;
             
-        }
+        }  
       }}
     
     
