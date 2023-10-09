@@ -1,5 +1,5 @@
 
-#![Ilustración_sin_título](https://github.com/yanelysvelarde/Bot-Drop/assets/95549729/89c0b0fa-dd6f-403d-a903-337d464f99b4)
+![Ilustración_sin_título](https://github.com/yanelysvelarde/Bot-Drop/assets/95549729/89c0b0fa-dd6f-403d-a903-337d464f99b4)
 # 
 **Bot & Drop** In a post-apocalyptic world where the presence of life has faded into myth, two robots, Bot & Drop, exist in the desolation. They have heard data of a legendary plant located at the highest peak. This mystical plant requires the rarest of resources - pure water. 
 
@@ -18,7 +18,7 @@ Time spent: **24** hours spent in total
 
 ## Milestone
 1. Our project started with a game concept and design phase. We wanted to make a game where two people could play on the same keyboard to climb platforms without falling.
-2. Our project utilized HTML and CSS for the game's presentation. We designed a simple but effective user interface, with a canvas element to render the game world. 
+2. Our project utilized HTML and JS for the game's presentation. We designed a simple but effective user interface, with a canvas element to render the game world. 
 3. The heart of our project lay in JavaScript programming. We wrote several scripts to implement game mechanics, character movement, collision detection, and platform generation. Key game elements included gravity, player control, and platform interactions. We also utilized object-oriented programming principles to create classes for players and platforms, making our code modular and organized. :neckbeard: This are a few examples:
 
 Part of a code that handles keyboard input for controlling a player character in a game.
